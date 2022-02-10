@@ -1,18 +1,80 @@
-<style>
-    h5{
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Signup</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <style media="screen">
+        h5{
         color: red;
     }
-</style>
+    body{
+      background-image: url("static/images/pexels-photo-3356833.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      opacity: 0.7;
+      margin-left: 350px;
+    }
+    h2{
+        color: white;
+    }
+    label{
+        font-weight: bolder;
+    }
 
-{% for message in messages%}
+
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5 " style="opacity:1">
+
+    <h2>Sign Up</h2>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="card">
+            <div class="card-body">
+            <!-- Makes POST request to /register route -->
+            {% for message in messages%}
     <h5>{{message}}</h5>
     {% endfor %}
 
-<form action="register" method="post">
-    {% csrf_token %}
-    <input type="text" name="uname" placeholder="enter username"><br>
-    <input type="password" name="pass1" placeholder="Enter password"><br>
-        <input type="password" name="pass2" placeholder="Confirm password"><br>
-        <input type="email" name="email" placeholder="enter email"><br>
-        <input type="submit">
-</form>
+            <form action="register" method="POST">
+                {% csrf_token %}
+              <div class="form-group">
+                <label for="user">Username</label>
+                <input type="text" class="form-control" name="uname">
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="pass1">
+              </div>
+
+              <div class="form-group">
+                <label for="password">Confirm Password</label>
+                <input type="password" class="form-control" name="pass2">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email">
+              </div>
+              <button type="submit" class="btn btn-dark">Register</button>
+            </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+</html>

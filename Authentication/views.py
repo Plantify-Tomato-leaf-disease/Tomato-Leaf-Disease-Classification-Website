@@ -20,12 +20,12 @@ def register(request):
 
             if(User.objects.filter(email=email).exists()):
 
-                messages.info(request, 'email is already used')
+                messages.info(request, 'email is already used !!')
                 return render(request, 'register.html')
 
             if(User.objects.filter(username=username).exists()):
 
-                messages.info(request, 'User name is already used')
+                messages.info(request, 'Username is already used !!')
                 return render(request, 'register.html')
 
             user = User.objects.create_user(username=username, password = password1, email = email)
@@ -56,7 +56,7 @@ def login(request):
             return redirect('/')
         
         else:
-            messages.info(request, 'credentials incorrect')
+            messages.info(request, 'Credentials incorrect, Please enter again !!')
             return redirect('login')
 
 

@@ -8,9 +8,9 @@
     <meta name="keywords" content="New day,New creative things., INTUITIVE">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Home</title>
+    <title>Plantify</title>
     <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
-<link rel="stylesheet" href="{% static 'Home.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'Home.css' %}" media="screen">
     <script class="u-script" type="text/javascript" src="{% static 'jquery.js' %}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{% static 'nicepage.js' %}" defer=""></script>
     <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
@@ -27,7 +27,19 @@
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
     <title>Tomatify</title>
+
+    <style>
+      ul li{
+        display: inline;
+        font-weight: bold;
+      }
+      #dark{
+        font-weight: bold;
+      }
+    </style>
   </head>
+
+
   <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-429a"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="#" class="u-image u-logo u-image-1">
           <img src="{% static 'images/default-logo.png' %}" class="u-logo-image u-logo-image-1">
@@ -43,9 +55,10 @@
           </div>
           <div class="u-nav-container">
             {% if user.is_authenticated %}
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">Home</a></li>
-              <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="logout" style="padding: 10px 20px;">Logout</a></li>
-              <li><h2>Welcome, {{user.username}}</h2></li>
+            <ul class="u-nav u-unstyled u-nav-1">
+              <li style="font-weight: bold; font-size: medium;" class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">Home</a></li>
+              <li style="font-weight: bold; font-size: medium;" class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="logout" style="padding: 10px 20px;">Logout</a></li>
+              <li style="margin-left:30px; font-weight: bolder; font-size: large;"><span>Welcome, {{user.username}}</span></li>
               {% else %}
 <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="register" style="padding: 10px 20px;">Signup</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="login" style="padding: 10px 20px;">Login</a>
@@ -57,10 +70,14 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="register">Signup</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="login">Login</a>
-</li></ul>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/">Home</a>
+</li>
+<li id="dark" class="u-nav-item"><a class="u-button-style u-nav-link" href="register">Signup</a>
+</li>
+<li style="font-weight: bold; font-size: medium;" class="u-nav-item"><a class="u-button-style u-nav-link" href="login">Login</a>
+</li>
+</ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
